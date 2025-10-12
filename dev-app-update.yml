@@ -1,0 +1,3 @@
+provider: generic
+url: https://mix-station.com/pos/auto-updates
+updaterCacheDirName: mixvalue-pos-updater
