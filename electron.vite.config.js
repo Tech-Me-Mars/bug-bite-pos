@@ -16,16 +16,14 @@ export default defineConfig({
         '@': resolve('src/renderer/src')
       }
     },
-    define: {
+define: {
       'process.env': {
-        // URL_API: "https://api-uat.mix-station.com",
-        // URL_API: 'https://api.mix-station.com',
-        URL_API: 'http://27.254.144.161', 
-        PRINTER: process.env.PRINTER,
-        MQTT_URL: 'wss://27.254.144.161:8084/mqtt',
+        URL_API: process.env.VITE_URL_API || process.env.URL_API || 'http://27.254.144.161',
+        PRINTER: process.env.PRINTER || '',
+        MQTT_URL: process.env.VITE_MQTT_URL || process.env.MQTT_URL || 'wss://27.254.144.161:8084/mqtt',
         MQTT_USER: {
-          MQTT_AUTH_USERNAME: 'client_mix_station',
-          MQTT_AUTH_PASSWORD: 'mix-stati0n!$'
+          MQTT_AUTH_USERNAME: process.env.VITE_MQTT_AUTH_USERNAME || process.env.MQTT_AUTH_USERNAME || 'client_mix_station',
+          MQTT_AUTH_PASSWORD: process.env.VITE_MQTT_AUTH_PASSWORD || process.env.MQTT_AUTH_PASSWORD || 'mix-stati0n!$'
         }
       }
     },
