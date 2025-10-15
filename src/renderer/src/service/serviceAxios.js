@@ -1,5 +1,5 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://api_mixvalue.tech-me-mars.com";
+axios.defaults.baseURL = "http://27.254.144.161:9021";
 import router from '@/router/index.js';
 const getToken = function () {
   return localStorage.getItem("token");
